@@ -96,9 +96,11 @@ func main() {
 }
 
 // CORE_PEER_ADDRESS=127.0.0.1:7051 CORE_CHAINCODE_ID_NAME=demo:0 go run main.go
+// docker exec -it cli bash
 // peer chaincode install -p github.com/8tomat8/hyperledgerDemo -n demo -v 0
 // peer chaincode instantiate -n demo -v 0 -c '{"Args":["init"]}' -C mychannel
 
 // peer chaincode invoke -n demo -v 0 -c '{"Args":["createUser", "user1", "100"]}' -C mychannel
 // peer chaincode invoke -n demo -v 0 -c '{"Args":["createUser", "user2", "10"]}' -C mychannel
-// peer chaincode invoke -n accountant -v 0 -c '{"Args":["transfer","user1","user2", "42"]}' -C mychannel
+// peer chaincode invoke -n demo -v 0 -c '{"Args":["transfer","user1","user2", "42"]}' -C mychannel
+// peer chaincode query -n demo -v 0 -c '{"Args":["getBalance","user2"]}' -C mychannel
